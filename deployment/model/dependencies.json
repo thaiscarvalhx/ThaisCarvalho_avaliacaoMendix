@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "2.2",
+  "appName": "Produtos",
+  "published": [
+    {
+      "name": "REST Produtos",
+      "version": "1.0.0",
+      "path": "rest/restprodutos/v1",
+      "serviceType": "REST",
+      "contracts": [
+        {
+          "type": "OpenAPI 2.0",
+          "value": "{\"swagger\":\"2.0\",\"info\":{\"title\":\"REST Produtos\",\"version\":\"1.0.0\"},\"host\":\"{host}\",\"basePath\":\"/rest/restprodutos/v1\",\"schemes\":[\"{scheme}\"],\"paths\":{\"/produtos\":{\"get\":{\"tags\":[\"produtos\"],\"responses\":{\"200\":{\"description\":\"successful operation\"},\"401\":{\"$ref\":\"#/responses/UnauthorizedError\"}}},\"put\":{\"tags\":[\"produtos\"],\"parameters\":[{\"name\":\"Produto\",\"in\":\"body\",\"schema\":{\"$ref\":\"#/definitions/Produtos\"}}],\"responses\":{\"200\":{\"description\":\"successful operation\"},\"401\":{\"$ref\":\"#/responses/UnauthorizedError\"}}},\"post\":{\"tags\":[\"produtos\"],\"parameters\":[{\"name\":\"Produto\",\"in\":\"body\",\"schema\":{\"$ref\":\"#/definitions/Produtos\"}}],\"responses\":{\"200\":{\"description\":\"successful operation\"},\"401\":{\"$ref\":\"#/responses/UnauthorizedError\"}}},\"delete\":{\"tags\":[\"produtos\"],\"parameters\":[{\"name\":\"nomeProduto\",\"in\":\"query\",\"type\":\"string\"}],\"responses\":{\"200\":{\"description\":\"successful operation\"},\"401\":{\"$ref\":\"#/responses/UnauthorizedError\"}}}}},\"definitions\":{\"Produtos\":{\"title\":\"Produtos\",\"xml\":{\"name\":\"Produtos\"},\"type\":\"object\",\"properties\":{\"nomeProduto\":{\"example\":\"string\",\"type\":\"string\"},\"descProduto\":{\"example\":\"descricao\",\"type\":\"string\"},\"qtdEstoque\":{\"example\":0,\"type\":\"integer\",\"format\":\"int32\"},\"preco\":{\"example\":0,\"type\":\"number\"},\"validade\":{\"example\":\"2024-05-10T00:00:00\",\"type\":\"string\",\"format\":\"date-time\"}}}},\"responses\":{\"UnauthorizedError\":{\"description\":\"Authentication information is missing or invalid\",\"headers\":{\"WWW-Authenticate\":{\"type\":\"string\"}}}},\"securityDefinitions\":{\"basicAuth\":{\"type\":\"basic\"}},\"security\":[{\"basicAuth\":[]}],\"tags\":[{\"name\":\"produtos\",\"description\":\"\"}]}"
+        }
+      ],
+      "security": {
+        "types": [
+          {
+            "type": "Basic"
+          },
+          {
+            "type": "Session"
+          }
+        ],
+        "allowedRoles": [
+          {
+            "id": "8dd52bfa-6d7e-453b-b506-303c0a3d9567",
+            "name": "Administrator"
+          },
+          {
+            "id": "53f5d6fa-6da9-4a71-b011-454ec052cce8",
+            "name": "User"
+          }
+        ]
+      }
+    }
+  ],
+  "consumed": []
+}
